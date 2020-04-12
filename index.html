@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Elizabeta Trankulov</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Playfair+Display+SC&family=Podkova:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/f54bda218c.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.menu-btn').on('click', function(e){
+        $('ul.menu').toggleClass('show');
+        e.preventDefault();
+      });
+      $('.slider').bxSlider({
+        pager: false,
+        auto: true,
+        mode: 'fade',
+        speed: 1000,
+      });
+      $(document).scroll(function () {
+        $(".navbar").toggleClass('scrolled', $(this).scrollTop() > $(".bx-wrapper").height() -80);
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <div class="nav">
+          <a href="index.html" class="logo">EZ</a>
+          <a href="#" class="menu-btn"><i class="fas fa-bars"></i></a>
+          <ul class="menu">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a href="my-work.html">My work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div class="slider">
+        <div><img class="slide" src="images/slide-1.jpg" alt="Slide1"></div>
+        <div><img class="slide" src="images/slide-2.jpg" alt=""></div>
+        <div><img class="slide" src="images/slide-3.jpg" alt=""></div>
+        <div><img class="slide" src="images/slide-4.jpg" alt=""></div>
+        <div><img class="slide" src="images/slide-5.jpg" alt=""></div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="two-col">
+          <div class="about">
+            <h1>Elizabeta Trankulov</h1>
+            <p> I was born on 20th of May, year 1999 and named Elizabeta Trankulov. Bound to live for 19 years in a small town called, in my native language, Stár Bišnov. Though born in the far West of Romania, I am of Bulgarian ethnicity. My town had me educated as a high school graduate at the ”Saints Kiril and Metodii” high school, having a biology & chemistry based curriculum.
+            </p>
+            <p>I am unable to pinpoint the time I discovered art, it has been pretty early on that I just knew I could draw and paint, I just could. Of course the learning, improving and evolving has no end, but I did not choose art. I can say in a non-poetic note that art chose...</p>
+            <a href="about.html" class="btn">Read more &rarr;</a>
+          </div>
+          <div class="my-work">
+            <h2>My Work</h2>
+            <div class="work-grid">
+              <div class="cat">
+                <a href="photography.html">
+                  <img src="images/cat-photo.jpg" alt="Photography">
+                  <h3>Photography</h3>
+                  
+                </a>
+              </div>
+              <div class="cat">
+                <a href="graphic-design.html">
+                  <img src="images/cat-gp.jpg" alt="Graphic Design">
+                  <h3>Graphic <br>Design</br></h3>
+                </a>
+              </div>
+              <div class="cat">
+                <a href="paintings.html">
+                  <img src="images/cat-paint.jpg" alt="Paintings">
+                  <h3>Paintings</h3>
+                </a>
+              </div>
+              <div class="cat">
+                <a href="sketches.html">
+                  <img src="images/cat-sketch.jpg" alt="Sketches">
+                  <h3>Sketches</h3>
+                </a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer">
+        <p> Copyright &copy; Elizabeta Trankulov</p>
+        <ul class="social">
+          <li>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+  </footer>
+</body>
+</html>

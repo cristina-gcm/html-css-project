@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Elizabeta Trankulov</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Playfair+Display+SC&family=Podkova:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <link rel="stylesheet" href="lightbox.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/f54bda218c.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <script src="js/lightbox.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.menu-btn').on('click', function(e){
+        $('ul.menu').toggleClass('show');
+        e.preventDefault();
+      });
+    });
+  </script>
+</head>
+<body class="single">
+  <header>
+    <nav class="navbar scrolled">
+      <div class="container">
+        <div class="nav">
+          <a href="index.html" class="logo">EZ</a>
+          <a href="#" class="menu-btn"><i class="fas fa-bars"></i></a>
+          <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a  href="about.html">About me</a></li>
+            <li><a class="active" href="my-work.html">My work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div class="container">
+        <div class="my-work">
+            <h1>My Work</h1>
+            <h2>Photography</h2>
+            <div class="four-col">
+              <div class="cat">
+                <a href="photography/photo1.jpg" data-lightbox="photography">
+                  <img src="photography/photo1.jpg" class="thumb" alt="Photography">
+                </a>
+              </div>
+              <div class="cat">
+                <a href="photography/photo2.jpg" data-lightbox="photography">
+                  <img src="photography/photo2.jpg" class="thumb" alt="Photography">
+                </a>
+              </div>
+              <div class="cat">
+                <a href="photography/photo3.jpg" data-lightbox="photography">
+                  <img src="photography/photo3.jpg" class="thumb" alt="Photography">
+                </a>
+              </div>
+              <div class="cat">
+                <a href="photography/photo4.jpg" data-lightbox="photography">
+                  <img src="photography/photo4.jpg" class="thumb" alt="Photography">
+                </a>
+              </div>
+              <div class="cat">
+                <a href="photography/photo5.jpg" data-lightbox="photography">
+                  <img src="photography/photo5.jpg" class="thumb" alt="Photography">
+                </a>
+              </div>
+              <div class="cat">
+                <a href="photography/photo6.jpg" data-lightbox="photography">
+                  <img src="photography/photo6.jpg" class="thumb" alt="Photography">
+                </a>
+              </div>
+              <div class="cat">
+                <a href="photography/photo7.jpg" data-lightbox="photography">
+                  <img src="photography/photo7.jpg" class="thumb" alt="Photography">
+                </a>
+              </div>
+              <div class="cat">
+                <a href="photography/photo8.jpg" data-lightbox="photography">
+                  <img src="photography/photo8.jpg" class="thumb" alt="Photography">
+                </a>
+              </div>
+            </div>
+            
+          </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer">
+        <p> Copyright &copy; Elizabeta Trankulov</p>
+        <ul class="social">
+          <li>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+  </footer>
+</body>
+</html>
