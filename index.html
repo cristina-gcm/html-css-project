@@ -11,21 +11,30 @@
   <script src="https://kit.fontawesome.com/f54bda218c.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="js/utils.js"></script>
   <script>
     $(document).ready(function(){
-      $('.menu-btn').on('click', function(e){
-        $('ul.menu').toggleClass('show');
-        e.preventDefault();
-      });
       $('.slider').bxSlider({
         pager: false,
         auto: true,
         mode: 'fade',
         speed: 1000,
-      });
-      $(document).scroll(function () {
-        $(".navbar").toggleClass('scrolled', $(this).scrollTop() > $(".bx-wrapper").height() -80);
-      });
+      });      
+    });
+  </script>
+  <script>
+    // Cand se incarca dom-ul
+    document.addEventListener("DOMContentLoaded", function(event) { 
+      
+      // La click pe .menu-btn se adauga/sterge clasa show pentru navigatie (mobil)
+      setMenuToggler();
+
+      // La click pe .font-size se adauga/sterge clasa large-font pentru body 
+      setFontToggler();
+
+      // Verificare daca userul este autentificat
+      checkUser();
     });
   </script>
 </head>
@@ -34,13 +43,14 @@
     <nav class="navbar">
       <div class="container">
         <div class="nav">
-          <a href="/" class="logo">EZ</a>
+          <a href="index.html" class="logo">EZ</a>
           <a href="#" class="menu-btn"><i class="fas fa-bars"></i></a>
           <ul class="menu">
-            <li><a class="active" href="/">Home</a></li>
+            <li><a class="active" href="index.html">Home</a></li>
             <li><a href="about.html">About me</a></li>
             <li><a href="my-work.html">My work</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a id="login-link" href="login.html">Login</a></li>
           </ul>
         </div>
       </div>
@@ -115,6 +125,10 @@
             </a>
           </li>
         </ul>
+         <select name="font-size" id="font-size">
+          <option value="regular">Regular Font</option>
+          <option value="large">Large Font</option>
+        </select>
       </div>
       
     </div>

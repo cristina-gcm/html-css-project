@@ -22,8 +22,8 @@
       // La click pe .font-size se adauga/sterge clasa large-font pentru body 
       setFontToggler();
 
-      // Verificare daca userul este autentificat
-      checkUser();
+      // La trimiterea formularului de login se executa functia login (din utils.js)
+      document.getElementById('login-form').addEventListener('submit', login);
     });
   </script>
 </head>
@@ -36,10 +36,10 @@
           <a href="#" class="menu-btn"><i class="fas fa-bars"></i></a>
           <ul class="menu">
             <li><a href="index.html">Home</a></li>
-            <li><a class="active" href="about.html">About me</a></li>
+            <li><a  href="about.html">About me</a></li>
             <li><a href="my-work.html">My work</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a id="login-link" href="login.html">Login</a></li>
+            <li><a class="active" id="login-link" href="login.html">Login</a></li>
           </ul>
         </div>
       </div>
@@ -48,21 +48,28 @@
   <main>
     <section>
       <div class="container">
-        <div class="two-col">
-          <div class="about">
-            <h1>Elizabeta Trankulov</h1>
-            <p> I was born on 20th of May, year 1999 and named Elizabeta Trankulov. Bound to live for 19 years in a small town called, in my native language, Stár Bišnov. Though born in the far West of Romania, I am of Bulgarian ethnicity. My town had me educated as a high school graduate at the ”Saints Kiril and Metodii” high school, having a biology & chemistry based curriculum.
-            </p>
-            <p>I am unable to pinpoint the time I discovered art, it has been pretty early on that I just knew I could draw and paint, I just could. Of course the learning, improving and evolving has no end, but I did not choose art. I can say in a non-poetic note that art chose and claimed me, as I tried to deny it up until I was 16 or 17 years old. After finally accepting the fact that I have no escape, the working phase started, and it shall never end. 
-            </p>
-            <p>
-                Art has you execute things you never thought you would, such as actually pursuing it by choosing an art based college, the subject of graphic design, to be more precise.
-            </p>
-          </div>
-          <div class="about">
-           <img src="images/pic5.jpg" alt="Portrait">
-          </div>
-        </div>
+          <div class="contact">
+            <h1>Login</h1>
+
+            <form id="login-form" class="contact-form">
+
+              <div class="alert alert-success" style="display: none;"></div>
+              <div class="alert alert-error" style="display: none;"></div>
+
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input id="email" type="email" id="lname" name="email">
+              </div>
+              <div class="form-field">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+              </div>
+              <div class="form-field">
+                <button type="submit" class="btn">Login</button>
+              </div>
+              <p>Don't have an account? <a href="register.html">Register here!</a></p>
+            </form>
+          </div>  
       </div>
     </section>
   </main>

@@ -33,7 +33,11 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-	line-height: 1;
+  line-height: 1;
+}
+
+body.large-font {
+  font-size: 22px;
 }
 
 ol, ul {
@@ -571,6 +575,8 @@ footer {
 
 ul.social {
   display: flex;
+  margin-left: auto;
+  margin-right: 1.5rem;
 }
 ul.social li {
   padding: 0 .5rem;
@@ -613,20 +619,103 @@ ul.social li a:hover {
   margin: 0 auto;
 }
 
+.comments-form {
+  width: 500px;
+  margin: 0;
+}
 .contact-form label {
   display:block;
   margin-bottom: 1rem;
 }
 
-.contact-form .form-field {
+.comments-form label {
+  display:block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-form .form-field, .comments-form .form-field {
   margin-bottom: 2rem;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input, .contact-form textarea, .comments-form input, .comments-form textarea {
   width:100%;
   border: 1px solid #000;
   padding: .5rem .8rem;
   border-radius: 5px;
+}
+
+.alert {
+  padding: 1rem 2rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  margin: 2rem 0;
+}
+
+.alert-success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.alert-error {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+#comments {
+  padding: 2rem 0;
+}
+
+ul.comments-list {
+  list-style-type: none;
+  margin-bottom: 1rem;
+}
+
+ul.comments-list li {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+}
+
+ul.comments-list li p {
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+ul.comments-list li span.author {
+  text-align: right;
+  display: block;
+}
+
+ul.comments-list li a.delete-link {
+  color: #ff0000;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+.comments-filter {
+  text-align: right;
+  margin-bottom: 2rem;
+}
+
+#nouser {
+  padding: 2rem 0;
+}
+
+.not-found {
+  text-align: center;
+}
+
+.not-found h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.not-found p {
+  font-size: 2rem;
 }
 
 @media (max-width: 576px) { 

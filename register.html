@@ -15,15 +15,20 @@
   <script>
     // Cand se incarca dom-ul
     document.addEventListener("DOMContentLoaded", function(event) { 
-      
+
       // La click pe .menu-btn se adauga/sterge clasa show pentru navigatie (mobil)
       setMenuToggler();
 
       // La click pe .font-size se adauga/sterge clasa large-font pentru body 
       setFontToggler();
 
-      // Verificare daca userul este autentificat
-      checkUser();
+      // La schimbarea range-ului pentru versta se afiseaza valoarea
+      document.getElementById("age").addEventListener("change", function(e) {
+        document.getElementById('ageShow').value = this.value;
+      });
+
+      // La trimiterea formularului de inregistrare se executa functia register (din utils.js)
+      document.getElementById('register-form').addEventListener('submit', register);
     });
   </script>
 </head>
@@ -38,8 +43,8 @@
             <li><a href="index.html">Home</a></li>
             <li><a  href="about.html">About me</a></li>
             <li><a href="my-work.html">My work</a></li>
-            <li><a class="active" href="contact.html">Contact</a></li>
-            <li><a id="login-link" href="login.html">Login</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a class="active" href="register.html">Register</a></li>
           </ul>
         </div>
       </div>
@@ -49,23 +54,52 @@
     <section>
       <div class="container">
           <div class="contact">
-            <h1>Get in touch</h1>
-            <form class="contact-form">
+            <h1>Register</h1>
 
-              <div class="form-field">
-                <label for="name">Name</label>
-                <input id="name" type="text" id="name" name="name">
-              </div>
+            <form id="register-form" class="contact-form">
+
+              <div class="alert alert-success" style="display: none;"></div>
+            <div class="alert alert-error" style="display: none;"></div>
+            
+                <div class="form-field">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" name="name">
+                  </div>
               <div class="form-field">
                 <label for="email">Email</label>
-                <input id="email" type="text" id="lname" name="email">
+                <input id="email" type="email" name="email">
               </div>
               <div class="form-field">
-                <label for="mesaj">What's on your mind?</label>
-                <textarea id="mesaj" name="mesaj" rows="5"></textarea>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
               </div>
               <div class="form-field">
-                <button type="submit" class="btn">Send</button>
+                <label for="age">Age</label>
+                <input type="range" id="age" name="age"
+                min="13"
+                max="99" value="18">
+                <input id="ageShow" type="text" value="18" disabled="disabled">
+              </div>
+            <div class="form-field">
+                <p>Select the account type:</p>
+                <br>
+                <input type="radio" id="student" name="account_type" value="student">
+                <label for="student">Student</label>
+                
+                <input type="radio" id="employee" name="account_type" value="employee">
+                <label for="employee">Employee</label>
+
+                <input type="radio" id="retired" name="account_type" value="retired">
+                <label for="retired">Retired</label>
+            </div>    
+            <div class="form-field">
+                <label for="terms">I accept the terms & conditions</label>
+                <input type="checkbox" id="terms" name="terms">
+                
+                
+            </div>      
+              <div class="form-field">
+                <button type="submit" class="btn">Register</button>
               </div>
             </form>
           </div>  

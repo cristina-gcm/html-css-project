@@ -11,14 +11,26 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/f54bda218c.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="js/lightbox.js"></script>
+  <script src="js/ejs.min.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/comments.js"></script>
   <script>
-    $(document).ready(function(){
-      $('.menu-btn').on('click', function(e){
-        $('ul.menu').toggleClass('show');
-        e.preventDefault();
-      });
+    // Cand se incarca dom-ul
+    document.addEventListener("DOMContentLoaded", function(event) { 
+      
+      // La click pe .menu-btn se adauga/sterge clasa show pentru navigatie (mobil)
+      setMenuToggler();
+
+      // La click pe .font-size se adauga/sterge clasa large-font pentru body 
+      setFontToggler();
+
+      // Verificare daca userul este autentificat
+      checkUser();
+
+      // Incarcare comentarii si initializare formular pentru comentariu nou (din comments.js)
+      initComments('paintings');
     });
   </script>
 </head>
@@ -27,13 +39,14 @@
     <nav class="navbar scrolled">
       <div class="container">
         <div class="nav">
-          <a href="/" class="logo">EZ</a>
+          <a href="index.html" class="logo">EZ</a>
           <a href="#" class="menu-btn"><i class="fas fa-bars"></i></a>
           <ul class="menu">
-            <li><a href="/">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a  href="about.html">About me</a></li>
             <li><a class="active" href="my-work.html">My work</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a id="login-link" href="login.html">Login</a></li>
           </ul>
         </div>
       </div>
@@ -70,6 +83,36 @@
             </div>
             
           </div>
+          <div id="comments">
+            <div class="comments-filter" style="display: none;">
+              <select name="comments-filter" id="comments-filter">
+                <option value="all">All Comments</option>
+                <option value="my">My Comments</option>
+              </select>
+            </div>
+            
+            <div class="comments">Loading...</div>
+
+              <h1>Post a comment</h1>
+              
+              <form id="comments-form" class="comments-form" style="display: none;">
+                
+                <div class="form-field">
+                  <label for="text">What's on your mind?</label>
+                  <textarea id="text" name="text" rows="5"></textarea>
+                </div>
+                <div class="form-field">
+                  <button type="submit" class="btn">Submit</button>
+                </div>
+              </form>
+
+              <div id="nouser">
+                <p>
+                  <a href="login.html">Login</a> or <a href="register.html">register</a> to post a comment.
+                </p>
+              </div>
+      
+          </div>
       </div>
     </section>
   </main>
@@ -87,6 +130,10 @@
             </a>
           </li>
         </ul>
+        <select name="font-size" id="font-size">
+          <option value="regular">Regular Font</option>
+          <option value="large">Large Font</option>
+        </select>
       </div>
       
     </div>
