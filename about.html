@@ -70,7 +70,7 @@
     <div class="container">
       <div class="footer">
         <p> Copyright &copy; Elizabeta Trankulov</p>
-        <ul class="social">
+        <ul class="social" id="social" ondblclick="reverseList()">
           <li>
             <a href="#"><i class="fab fa-facebook"></i></a>
           </li>
@@ -80,6 +80,15 @@
             </a>
           </li>
         </ul>
+        <script>
+          function reverseList() {
+            
+            var social = document.getElementById("social");
+            var i = social.childNodes.length;
+            while (i--)
+              social.appendChild(social.childNodes[i]);
+          }  
+        </script>
         <select name="font-size" id="font-size">
           <option value="regular">Regular Font</option>
           <option value="large">Large Font</option>
