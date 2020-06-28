@@ -24,6 +24,8 @@
 
       // Verificare daca userul este autentificat
       checkUser();
+
+  
     });
   </script>
 </head>
@@ -54,11 +56,15 @@
 
               <div class="form-field">
                 <label for="name">Name</label>
-                <input id="name" type="text" id="name" name="name">
+                <input id="name" type="text" id="name" name="name" class="highlight">
               </div>
               <div class="form-field">
                 <label for="email">Email</label>
-                <input id="email" type="text" id="lname" name="email">
+                <input id="email" type="text" id="lname" name="email" class="highlight">
+              </div>
+              <div class="form-field">
+                <label for="location">Where are you from?</label>
+                <input id="location" type="text" id="location" name="location" class="highlight">
               </div>
               <div class="form-field">
                 <label for="mesaj">What's on your mind?</label>
@@ -66,6 +72,9 @@
               </div>
               <div class="form-field">
                 <button type="submit" class="btn">Send</button>
+              </div>  
+              <div class="form-field">
+                <button class="btn" onclick="showFocused(event)">Not sure?</button>  
               </div>
             </form>
           </div>  
@@ -94,5 +103,67 @@
       
     </div>
   </footer>
+  <script>
+    
+    var inputs = document.querySelectorAll("input[type='text']")
+
+    var counters = {}
+    Array.prototype.forEach.call(inputs, function(input, i){
+        counters[input.name] = 0
+        input.addEventListener("focus", function(e){
+          incrementCounter(e.target)
+        })
+    });
+    
+    
+
+    var incrementCounter = function(input){
+      counters[input.name] += 1
+      console.log(counters)
+    }
+
+    function showFocused(event){
+      event.preventDefault()
+      var emptyInputs = Array.prototype.slice.call(inputs).filter(function(input){
+        return input.value.length == 0
+      })
+      var highlight = emptyInputs.reduce(function(highest, input){
+        return counters[input.name] > counters[highest.name] ? input : highest
+      })
+      highlight.style.backgroundColor = "red"
+    }
+
+    
+
+    console.log(counters)
+
+    /*var inputs = document.querySelectorAll("input[type='text']")
+    
+    ///console.log(inputs)
+
+    var freq = [0, 0, 0]
+
+    var keys = [0, 0, 0]
+    
+    console.log(inputs)
+    console.log(inputs[0])
+    console.log(inputs.length)
+    for (let i = 0; i < inputs.length; i++) {
+      inputs[i].addEventListener("focus", function(){
+        freq[i] = freq[i] + 1
+        ///console.log(i, freq[i])
+  })
+      inputs[i].addEventListener("keypress", function(){
+        keys[i] = keys[i] + 1
+        ///console.log(i, keys[i])
+  })
+    console.log(i, freq[i], keys[i])
+}
+
+  
+
+    inputs[0].style.backgroundColor = "red"*/
+
+  </script>
 </body>
 </html>
